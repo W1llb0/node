@@ -9,3 +9,5 @@ app.use(express.json());
 app.use('/api', userRouter);
 
 app.listen(PORT, () => console.log(`Server was started on port ${PORT}`));
+
+
