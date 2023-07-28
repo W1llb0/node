@@ -4,14 +4,14 @@ const sequelize = new Sequelize('node_postgres', 'postgres', 'root', {
     dialect: 'postgres',
 });
 
-const testDbConnection = async () => {
-    try {
-        await sequelize.authenticate();
-        console.log('Connection has been established successfully.');
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
-};
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Подключение успешно установлено');
+  })
+  .catch((error) => {
+    console.error('Ошибка подключения:', error);
+  });
 
 // import pg from 'pg';
 // const { Pool } = pg;
